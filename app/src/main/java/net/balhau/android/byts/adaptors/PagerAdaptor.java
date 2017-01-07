@@ -4,26 +4,26 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import net.balhau.android.byts.utils.FragsDictionary;
+
 /**
- * Adaptor for the viewpager mechanism
+ * Adaptor for the viewpager mechanism that depends on the {@link FragsDictionary} enumerated stuff
+ *
  */
 
 public class PagerAdaptor extends FragmentStatePagerAdapter {
 
-    private int numberOfTabs;
-
-    public PagerAdaptor(FragmentManager fm, int numberOfTabs){
+    public PagerAdaptor(FragmentManager fm){
         super(fm);
-        this.numberOfTabs=numberOfTabs;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return null;
+        return FragsDictionary.values()[position].generate();
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return FragsDictionary.values().length;
     }
 }
