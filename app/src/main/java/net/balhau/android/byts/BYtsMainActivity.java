@@ -32,7 +32,7 @@ public class BYtsMainActivity extends AppCompatActivity {
     }
 
     private FloatingActionButton createFloatingActionButton(){
-         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.);
+         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fragment);
          fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
