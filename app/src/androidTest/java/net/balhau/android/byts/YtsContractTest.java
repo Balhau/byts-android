@@ -1,26 +1,24 @@
 package net.balhau.android.byts;
 
 import android.net.Uri;
+import android.support.test.runner.AndroidJUnit4;
 
 import junit.framework.Assert;
-import junit.framework.TestCase;
 
 import net.balhau.android.byts.data.YtsContract;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 /**
  *
  */
-
-public class YtsContractTest extends TestCase {
-
-
-
+@RunWith(AndroidJUnit4.class)
+public class YtsContractTest {
     @Test
     public void testBuildContract(){
-        Uri torrentUri = YtsContract.TorrentEntry.buildLocationUri(12);
-        assertNotNull(torrentUri);
+        Uri torrentUri = YtsContract.ProviderEntry.buildLocationUri(12);
+        Assert.assertNotNull(torrentUri);
         Assert.assertTrue(true);
     }
 }
