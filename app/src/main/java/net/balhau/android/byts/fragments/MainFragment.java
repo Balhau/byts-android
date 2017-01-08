@@ -22,19 +22,27 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View viewRoot = inflater.inflate(R.layout.fragment_byts_main,container,false);
-        TabLayout tableLayout = createTabLayout(viewRoot);
+        TabLayout tableLayout = createTabLayout(inflater,viewRoot);
         ViewPager viewPager = createViewPager(viewRoot,tableLayout);
         setTabLayoutListener(tableLayout,viewPager);
         return viewRoot;
     }
 
-    private TabLayout createTabLayout(View view){
+    private TabLayout createTabLayout(LayoutInflater inflator,View view){
         FragsDictionary[] fragsDictionaries = FragsDictionary.values();
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
         for(FragsDictionary frag : fragsDictionaries){
-            tabLayout.addTab(tabLayout.newTab().setIcon(frag.getIconId()));
+            tabLayout.addTab(getImageTab(inflator,tabLayout,frag.getIconId()));
         }
         return tabLayout;
+    }
+
+    private TabLayout.Tab getImageTab(LayoutInflater inflator, TabLayout tabLayout, int resourceId){
+        TabLayout.Tab tab = tabLayout.newTab();
+        View customTab = inflator.inflate(R.layout.customtab,null);
+        customTab.findViewById(R.id.tabIcon).setBackgroundResource(resourceId);
+        tab.setCustomView(customTab);
+        return tab;
     }
 
     private ViewPager createViewPager(View view,TabLayout tabLayout){

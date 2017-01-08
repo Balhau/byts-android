@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 
 import net.balhau.android.byts.R;
 import net.balhau.android.byts.fragments.TorrentsFragment;
+import net.balhau.android.byts.fragments.TrackerFragment;
 import net.balhau.android.byts.fragments.YoutubeFragment;
 import net.balhau.android.byts.fragments.YtsFragment;
 
@@ -33,7 +34,14 @@ public enum FragsDictionary {
         public Fragment generate() {
             return new TorrentsFragment();
         }
-    },R.drawable.ic_torrents);
+    },R.drawable.ic_torrents),
+
+    TRACKER(new Generator<Fragment>() {
+        @Override
+        public Fragment generate() {
+            return new TrackerFragment();
+        }
+    },R.drawable.ic_tracker);
 
     private Generator<Fragment> fragmentGenerator;
     private int iconid;
