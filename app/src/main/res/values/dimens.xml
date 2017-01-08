@@ -3,4 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="actionBarHeight">70dp</dimen>
+    <dimen name="iconTabWidth">50dp</dimen>
+    <dimen name="iconTabHeight">50dp</dimen>
 </resources>

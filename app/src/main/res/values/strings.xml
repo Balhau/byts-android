@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BYts</string>
+    <string name="app_name">BToolkit</string>
     <string name="action_settings">Settings</string>
 
     <string-array name="menu_tabs">
