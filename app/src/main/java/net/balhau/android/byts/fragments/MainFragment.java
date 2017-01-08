@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import net.balhau.android.byts.R;
 import net.balhau.android.byts.adaptors.PagerAdaptor;
+import net.balhau.android.byts.utils.FragsDictionary;
 
 /**
  * Created by vitorfernandes on 1/7/17.
@@ -28,10 +29,10 @@ public class MainFragment extends Fragment {
     }
 
     private TabLayout createTabLayout(View view){
-        String[] tabs = getResources().getStringArray(R.array.menu_tabs);
+        FragsDictionary[] fragsDictionaries = FragsDictionary.values();
         TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab_layout);
-        for(String tab : tabs){
-            tabLayout.addTab(tabLayout.newTab().setText(tab));
+        for(FragsDictionary frag : fragsDictionaries){
+            tabLayout.addTab(tabLayout.newTab().setIcon(frag.getIconId()));
         }
         return tabLayout;
     }
