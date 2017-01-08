@@ -2,8 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment"
-    android:name="net.balhau.android.byts.fragments.YtsFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="net.balhau.android.byts.fragments.MainFragment"
+    android:name="net.balhau.android.byts.fragments.MainFragment"
     tools:layout="@layout/fragment_byts_main" />
