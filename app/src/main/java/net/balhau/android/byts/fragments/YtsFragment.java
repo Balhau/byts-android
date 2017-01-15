@@ -1,35 +1,32 @@
 package net.balhau.android.byts.fragments;
 
-import android.content.Context;
+import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListAdapter;
+import android.widget.AbsListView;
 import android.widget.ListView;
-
-import com.google.gson.Gson;
 
 import net.balhau.android.byts.R;
 import net.balhau.android.byts.adaptors.YtsMovieArrayAdapter;
 import net.balhau.android.byts.adaptors.domain.yts.YtsEntry;
 import net.balhau.android.byts.adaptors.domain.yts.YtsPageResponse;
+import net.balhau.android.byts.adaptors.listeners.OnScrollInfiniteListener;
 import net.balhau.android.byts.adaptors.tasks.YtsMovieUpdateTask;
-import net.balhau.android.byts.utils.Downloader;
-import net.balhau.android.byts.utils.Executor;
+import net.balhau.android.byts.utils.Generator;
 
 import java.util.ArrayList;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
 
 /**
  * Class for Yify torrent fragment view
  */
-public class YtsFragment extends Fragment {
+public class YtsFragment extends Fragment{
 
     private YtsMovieUpdateTask updateTask;
+
     public YtsFragment() {
     }
 
@@ -38,10 +35,21 @@ public class YtsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View ytsView= inflater.inflate(R.layout.fragment_byts_yts, container, false);
         ListView listView = (ListView) ytsView.findViewById(R.id.ytsListView);
-        YtsMovieArrayAdapter adapter = new YtsMovieArrayAdapter(getContext(),new ArrayList<YtsEntry>());
+        final YtsMovieArrayAdapter adapter = new YtsMovieArrayAdapter(getContext(),new ArrayList<YtsEntry>());
         listView.setAdapter(adapter);
+
         updateTask = new YtsMovieUpdateTask(adapter);
         updateTask.execute(1);
+
+        listView.setOnScrollListener(
+                new OnScrollInfiniteListener(new Generator<AsyncTask<Integer,Void,YtsPageResponse>>() {
+                    @Override
+                    public AsyncTask generate() {
+                        return new YtsMovieUpdateTask(adapter);
+                    }
+                })
+        );
+
         return ytsView;
     }
 }

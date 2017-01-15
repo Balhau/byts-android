@@ -1,20 +1,12 @@
 package net.balhau.android.byts.adaptors.tasks;
 
-import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.ListView;
 
 import com.google.gson.Gson;
 
 import net.balhau.android.byts.adaptors.YtsMovieArrayAdapter;
-import net.balhau.android.byts.adaptors.domain.yts.YtsEntry;
 import net.balhau.android.byts.adaptors.domain.yts.YtsPageResponse;
 import net.balhau.android.byts.utils.Downloader;
-import net.balhau.android.byts.utils.Executor;
-
-import java.util.ArrayList;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
 
 /**
  * Created by vitorfernandes on 1/14/17.
@@ -41,7 +33,6 @@ public class YtsMovieUpdateTask extends AsyncTask<Integer,Void,YtsPageResponse>{
     protected void onPostExecute(YtsPageResponse ytsPageResponse) {
         super.onPostExecute(ytsPageResponse);
         if(ytsPageResponse.getError()==false){
-            adapter.clear();
             adapter.addAll(ytsPageResponse.getMessage());
         }
     }
