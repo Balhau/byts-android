@@ -1,7 +1,7 @@
 package net.balhau.android.byts.adaptors.domain.yts;
 
 /**
- * Created by vitorfernandes on 1/14/17.
+ * Created by balhau on 1/14/17.
  */
 
 public class YtsEntry {

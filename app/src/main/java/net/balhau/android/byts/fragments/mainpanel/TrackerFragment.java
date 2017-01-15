@@ -1,4 +1,4 @@
-package net.balhau.android.byts.fragments;
+package net.balhau.android.byts.fragments.mainpanel;
 
 import android.graphics.Color;
 import android.os.Bundle;
