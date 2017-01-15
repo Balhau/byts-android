@@ -6,7 +6,7 @@ import com.google.gson.Gson;
 
 import net.balhau.android.byts.adaptors.YtsMovieArrayAdapter;
 import net.balhau.android.byts.adaptors.domain.yts.YtsPageResponse;
-import net.balhau.android.byts.utils.Downloader;
+import net.balhau.android.byts.utils.HttpUtil;
 
 /**
  * Created by vitorfernandes on 1/14/17.
@@ -23,7 +23,7 @@ public class YtsMovieUpdateTask extends AsyncTask<Integer,Void,YtsPageResponse>{
     @Override
     protected YtsPageResponse doInBackground(Integer... page) {
         String url = String.format(YTS_ENDPOINT,page);
-        String jsonData = Downloader.get(url);
+        String jsonData = HttpUtil.get(url);
         Gson gson = new Gson();
         YtsPageResponse response = gson.fromJson(jsonData,YtsPageResponse.class);
         return response;

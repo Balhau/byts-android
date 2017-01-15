@@ -1,11 +1,14 @@
 package net.balhau.android.byts.adaptors.domain.yts;
 
+import java.util.List;
+
 /**
  * Created by vitorfernandes on 1/14/17.
  */
 
 public class YtsEntry {
 
+    private List<TorrentLink> torrentLinks;
     private String imageURL;
     private String description;
     private YtsEntryResource imdb;
@@ -34,6 +37,14 @@ public class YtsEntry {
 
     public YtsEntryResource getImdb() {
         return imdb;
+    }
+
+    public List<TorrentLink> getTorrentLinks() {
+        return torrentLinks;
+    }
+
+    public void setTorrentLinks(List<TorrentLink> torrentLinks) {
+        this.torrentLinks = torrentLinks;
     }
 
     public void setImdb(YtsEntryResource imdb) {

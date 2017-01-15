@@ -10,7 +10,7 @@ import java.net.URL;
  * Created by balhau on 1/14/17.
  */
 
-public class Downloader {
+public class HttpUtil {
 
     public static String get(String link){
         try {

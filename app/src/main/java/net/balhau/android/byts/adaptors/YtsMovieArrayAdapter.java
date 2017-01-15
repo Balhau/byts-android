@@ -17,6 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import net.balhau.android.byts.R;
 import net.balhau.android.byts.adaptors.domain.yts.YtsEntry;
+import net.balhau.android.byts.adaptors.tasks.YtsSendTorrentToDownload;
 import net.balhau.android.byts.fragments.details.YtsDetailFragment;
 
 
@@ -49,6 +50,8 @@ public class YtsMovieArrayAdapter extends ArrayAdapter<YtsEntry> {
             @Override
             public void onClick(View v) {
                 //Next implement the async task to send the data into the server and in the end add the notification
+                YtsSendTorrentToDownload sendTorrentToDownload = new YtsSendTorrentToDownload();
+                sendTorrentToDownload.execute(entry);
                 Resources r = getContext().getResources();
                 Bitmap largeIcon = BitmapFactory.decodeResource(r,R.drawable.ic_yts);
 
