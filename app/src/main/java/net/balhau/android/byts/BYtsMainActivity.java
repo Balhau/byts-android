@@ -1,5 +1,9 @@
 package net.balhau.android.byts;
 
+
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +23,7 @@ public class BYtsMainActivity extends AppCompatActivity {
         setContentView(R.layout.content_byts_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //createFloatingActionButton();
     }
 
     private FloatingActionButton createFloatingActionButton(){
@@ -50,6 +55,9 @@ public class BYtsMainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this,SettingsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
             return true;
         }
 

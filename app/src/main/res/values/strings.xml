@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">BToolkit</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
 
     <string-array name="menu_tabs">
         <item>YTS</item>
