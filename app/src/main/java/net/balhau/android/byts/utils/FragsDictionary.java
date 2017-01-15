@@ -1,13 +1,12 @@
 package net.balhau.android.byts.utils;
 
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 
 import net.balhau.android.byts.R;
-import net.balhau.android.byts.fragments.TorrentsFragment;
-import net.balhau.android.byts.fragments.TrackerFragment;
-import net.balhau.android.byts.fragments.YoutubeFragment;
-import net.balhau.android.byts.fragments.YtsFragment;
+import net.balhau.android.byts.fragments.mainpanel.TorrentsFragment;
+import net.balhau.android.byts.fragments.mainpanel.TrackerFragment;
+import net.balhau.android.byts.fragments.mainpanel.YoutubeFragment;
+import net.balhau.android.byts.fragments.mainpanel.YtsFragment;
 
 
 /**

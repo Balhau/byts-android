@@ -1,4 +1,4 @@
-package net.balhau.android.byts.fragments;
+package net.balhau.android.byts.fragments.mainpanel;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;

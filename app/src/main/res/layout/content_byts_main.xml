@@ -5,6 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="net.balhau.android.byts.fragments.MainFragment"
-    android:name="net.balhau.android.byts.fragments.MainFragment"
+    tools:context="net.balhau.android.byts.fragments.mainpanel.MainFragment"
+    android:name="net.balhau.android.byts.fragments.mainpanel.MainFragment"
     tools:layout="@layout/fragment_byts_main" />
